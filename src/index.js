@@ -124,6 +124,7 @@ function MeshMap({
               appointments={data.appointments}
               onClick={onAppointmentClick}
             />
+            <RequestLayer requests={data.requests} onClick={onRequestClick} />
             <LinkLayer links={data.links} />
             <LosLayer los={data.los} />
           </GoogleMap>
