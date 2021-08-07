@@ -15,7 +15,8 @@ export default function Tooltip({ lat, lng, label }) {
 		>
 			<div className="flex flex-column items-center">
 				<div
-					className="flex items-center bg-white br1 overflow-hidden shadow pv05 ph1"
+					className="flex items-center bg-white br1 overflow-hidden shadow ph1"
+					style={{ paddingTop: "0.125rem", paddingBottom: "0.125rem" }}
 					ref={handleRef}
 				>
 					<span className="f6 nowrap helvetica ttc db">{label}</span>

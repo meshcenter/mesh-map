@@ -1,0 +1,12 @@
+/*Remove blue border around map when returning from another tab*/
+div[aria-label="Map"] {
+  outline: none !important;
+}
+
+div[aria-label="Map"] ~ div {
+  border: none !important;
+}
+
+.gm-style-cc {
+  display: none;
+}

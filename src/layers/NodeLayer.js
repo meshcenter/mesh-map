@@ -1,8 +1,9 @@
 import React from "react";
 
-import NodeMarker from "./NodeMarker";
+import NodeMarker from "../markers/NodeMarker";
 
 function NodeLayer({ nodes, selectedNode, onClick }) {
+	if (!nodes) return null;
 	return nodes.map((node) => (
 		<NodeMarker
 			key={`node-${node.id}`}

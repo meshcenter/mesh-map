@@ -1,6 +1,6 @@
 import React from "react";
 
-import AppointmentMarker from "./AppointmentMarker";
+import AppointmentMarker from "../markers/AppointmentMarker";
 
 function AppointmentLayer({
   appointments,
@@ -8,6 +8,7 @@ function AppointmentLayer({
   selectedNode,
   onClick,
 }) {
+  if (!appointments) return null;
   return appointments.map((appointment) => (
     <AppointmentMarker
       key={appointment.id}

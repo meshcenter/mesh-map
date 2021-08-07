@@ -1,7 +1,7 @@
 import React, { useContext, useCallback } from "react";
 import { Marker } from "@react-google-maps/api";
 import Tooltip from "./Tooltip";
-import { MapContext } from ".";
+import { Context } from "../Context";
 
 const regularIcon = {
 	url: "/img/map/request.svg",
@@ -14,7 +14,7 @@ const panoIcon = {
 };
 
 function RequestMarker({ request, onClick }) {
-	const { selectedNode, selectedRequest } = useContext(MapContext);
+	const { selectedNode, selectedRequest } = useContext(Context);
 	const selected = selectedRequest === request.id;
 	const dimmed =
 		(selectedRequest && selectedRequest !== request.id) ||

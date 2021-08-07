@@ -1,7 +1,7 @@
 import React, { useContext, useCallback } from "react";
 import { Marker } from "@react-google-maps/api";
 import Tooltip from "./Tooltip";
-import { MapContext } from ".";
+import { Context } from "../Context";
 
 const icon = {
   url: "/img/map/appointment.svg",
@@ -9,15 +9,14 @@ const icon = {
 };
 
 function AppointmentMarker({ appointment, onClick }) {
-  const { selectedNode, selectedRequest, selectedAppointment } = useContext(
-    MapContext
-  );
+  const { selectedNode, selectedRequest, selectedAppointment } =
+    useContext(Context);
   const selected = selectedAppointment === appointment.id;
   const dimmed = selectedNode || selectedRequest;
-  const onClickMemo = useCallback(() => onClick(appointment), [
-    appointment,
-    onClick,
-  ]);
+  const onClickMemo = useCallback(
+    () => onClick(appointment),
+    [appointment, onClick]
+  );
   if (appointment.status === "closed" && !selected) return null;
   return (
     <AppointmentMarkerMemo

@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import { Polyline } from "@react-google-maps/api";
-import { MapContext } from ".";
+import { Context } from "../Context";
 
 export default function LinkLine({ link }) {
-	const { selectedNode, nodesById } = useContext(MapContext);
+	const { selectedNode, mapMetadata } = useContext(Context);
+	const { nodesById } = mapMetadata;
+	if (!nodesById) return null;
 	const [nodeId1, nodeId2] = link.devices.map((d) => d.node_id);
 	const selected = selectedNode === nodeId1 || selectedNode === nodeId2;
 	const dimmed =

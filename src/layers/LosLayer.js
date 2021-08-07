@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react'
 
-import LosLine from "./LosLine";
+import LosLine from '../markers/LosLine'
 
 export default function LosLayer({ los }) {
-  if (!los) return null;
+  if (!los) return null
   return los.map(({ from, to }) => (
     <LosLine key={`los-${from.id}-${to.id}`} from={from} to={to} />
-  ));
+  ))
 }
